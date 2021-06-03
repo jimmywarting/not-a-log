@@ -1,0 +1,34 @@
+{
+  "name": "not-a-log",
+  "version": "1.0.0",
+  "description": "A tiny (20-line) console interface that returns everything as a string",
+  "main": "not-a-log.js",
+  "types": "not-a-log.d.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimmywarting/not-a-log.git"
+  },
+  "author": "Jimmy Wärting <jimmy@warting.se> (https://jimmy.warting.se/opensource)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimmywarting/not-a-log/issues"
+  },
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
+  "homepage": "https://github.com/jimmywarting/not-a-log",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/jimmywarting"
+    },
+    {
+      "type": "github",
+      "url": "https://paypal.me/jimmywarting"
+    }
+  ]
+}
