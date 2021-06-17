@@ -3,6 +3,7 @@
 A tiny (20-line) console interface that returns everything as a string
 
 - Have you ever ask yourself if you could get the string value from `console.table` rather then dumping it out to the terminal?
+- have you wished that you could use console as a Template literals/engine?
 - Have you thought about using [columnify](https://www.npmjs.com/package/columnify) or [table](https://www.npmjs.com/package/table) but didn't want to have a huge/large dependency to generate ascii tables?
 - Do you want any of the other tools available on the `console`, like `console.time`, `console.group` or `console.count` to also return stuff as a string?
 
@@ -12,6 +13,18 @@ This package will do just that. This wraps all the console methods in a [Proxy](
 So to live up to it's name it dose not log anything to the terminal, it simply returns everything as a string 😁
 
 ### Examples
+
+###### Using console as a template literal instead of using es6 tmpl syntax
+
+```js
+import logger from 'not-a-log'
+
+const str = logger.log(
+  'Logged message "%s" at level %d with object %o at time %s',
+  lastMsg, lastLevel, lastObj, lastTime
+)
+console.assert(str === 'Logged message "hi" at level 30 with object { a: 1 } at time 1531590545089')
+```
 
 ###### Get a list of people and output the result to a http request
 
