@@ -62,14 +62,15 @@ http.createServer((req, res) => {
 import logger from 'not-a-log'
 import fetch from 'node-fetch'
 
-logger.time('download')
+logger.time('req')
 
 const res = await fetch('https://httpbin.org/get')
+console.log('Time it took to make the Request' logger.timeLog('req'))
+
 const arrayBuffer = await res.arrayBuffer()
+const time = logger.timeEnd('req').split(': ')[1]
 
-const time = logger.timeEnd('download').split(': ')[1]
-
-console.log(`Time it took to fetch stuff from httpbin was ${time}`)
+console.log(`Total time for both Req+Res to httpbin was ${time}`)
 ```
 
 ###### Other stuff
