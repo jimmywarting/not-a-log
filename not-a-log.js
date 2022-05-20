@@ -1,6 +1,6 @@
 /*! not-a-logger. MIT License. Jimmy Wärting <https://jimmy.warting.se/opensource> */
-import { Console } from 'console'
-import { Transform } from 'stream'
+import { Console } from 'node:console'
+import { Transform } from 'node:stream'
 
 const ts = new Transform({ transform: (chunk, _, cb) => cb(null, chunk) })
 const logger = new Console({ stdout: ts, stderr: ts, colorMode: false })
