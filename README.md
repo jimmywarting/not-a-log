@@ -10,7 +10,7 @@ A tiny (20-line) console interface that returns everything as a string
 Turns out that you can (Just in NodeJS) by constructing a new [Console](https://nodejs.org/dist/latest-v16.x/docs/api/console.html#console_new_console_options) that redirects stdout/stderr to a node stream that you can then read from.
 This package will do just that. This wraps all the console methods in a [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy), read everything that was dumped to the stream and return what it just spit out as a string.
 
-So to live up to it's name it dose not log anything to the terminal, it simply returns everything as a string 😁
+So to live up to it's name it does not log anything to the terminal, it simply returns everything as a string 😁
 
 ### Examples
 
