@@ -6,7 +6,9 @@ const ts = new Transform({ transform: (chunk, _, cb) => cb(null, chunk) })
 const logger = new Console({ stdout: ts, stderr: ts, colorMode: false })
 const handler = {
   get (_, prop) {
-    return new Proxy(logger[prop], handler)
+    return Object.hasOwn(logger, prop)
+      ? new Proxy(logger[prop], handler)
+      : undefined;
   },
   apply (target, _, args) {
     target.apply(logger, args)
