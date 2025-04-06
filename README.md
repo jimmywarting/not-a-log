@@ -1,6 +1,6 @@
 # Not a log
 
-A tiny (20-line) console interface that returns everything as a string
+A tiny (15-line) console interface that returns everything as a string
 
 - Have you ever ask yourself if you could get the string value from `console.table` rather then dumping it out to the terminal?
 - have you wished that you could use console as a Template literals/engine?

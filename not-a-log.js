@@ -4,18 +4,12 @@ import { Transform } from 'node:stream'
 
 const ts = new Transform({ transform: (chunk, _, cb) => cb(null, chunk) })
 const logger = new Console({ stdout: ts, stderr: ts, colorMode: false })
-const handler = {
-  get (_, prop) {
-    return Object.hasOwn(logger, prop)
-      ? new Proxy(logger[prop], handler)
-      : undefined;
-  },
-  apply (target, _, args) {
-    target.apply(logger, args)
-    return (ts.read() || '').toString()
-  }
-}
+const { has, get, apply } = Reflect
 
-/** @type {typeof console} */
-const dump = new Proxy(logger, handler)
-export default dump
+const getProxy = t => new Proxy(t, {
+  get: (...args) => has(...args) ? getProxy(get(...args)) : undefined,
+  apply: (...args) => ((apply(...args), (ts.read() || '').toString()))
+})
+
+/** @type {import('./types.d.ts').Dump} */
+export default getProxy(logger)

@@ -1,9 +1,8 @@
 {
   "name": "not-a-log",
-  "version": "1.0.0",
-  "description": "A tiny (20-line) console interface that returns everything as a string",
+  "version": "1.0.2",
+  "description": "A tiny (15-line) console interface that returns everything as a string",
   "main": "not-a-log.js",
-  "types": "not-a-log.d.ts",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,7 +17,7 @@
     "url": "https://github.com/jimmywarting/not-a-log/issues"
   },
   "engines": {
-    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+    "node": ">=18"
   },
   "keywords": [
     "column",
